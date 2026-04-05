@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dompetku</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container">
+            <a class="navbar-brand text-white" href="index.html">Dompetku</a>
+        </div>
+    </nav>
+
+    <div class="container my-3">
+        <h2>Detail Keuangan</h2>
+
+        <div class="row justify-content-between">
+            <div class="col-2 d-flex justify-content-between align-items-center">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTambah">
+                    <i class="bi bi-plus"></i>Tambah
+                </button>
+            </div>
+            <div class="col-md-4 my-2 gap-2 d-flex">
+                <input type="text" class="form-control" id="cari" placeholder="Cari Data..." onkeyup="cariData()">
+                <div class="input-group">
+                    <label for="kalender" class="input-group-text bg-primary"><i class="bi bi-calendar text-white"></i></label>
+                    <input type="text" placeholder="Pilih Tanggal..." class="form-control" id="kalender">
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalTambah" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="form-tambah">
+                        <div class="modal-body">
+                            <div class="form-outline">
+                                <label for="" class="form-label">Deskripsi</label>
+                                <input type="text" class="form-control deskripsi">
+                            </div>
+                            <div class="form-outline">
+                                <label for="" class="form-label">Nominal</label>
+                                <input type="number" class="form-control nominal">
+                            </div>
+                            <div class="form-outline">
+                                <label for="" class="form-label">Kategori</label>
+                                <select class="form-select kategori" id="">
+                                    <option selected>-----</option>
+                                    <option value="gaji">Gaji</option>
+                                    <option value="hadiah">Hadiah</option>
+                                    <option value="belanja">Belanja</option>
+                                    <option value="transport">Transport</option>
+                                    <option value="makan">Makan</option>
+                                    <option value="jajan">Jajan</option>
+                                    <option value="cicilan">Cicilan</option>
+                                </select>
+                            </div>
+                            <div class="form-outline">
+                                <label for="" class="form-label">Tipe</label>
+                                <div class="form-control">
+                                    <input type="radio" name="tipe" value="income" id="pemasukan"> <label
+                                        for="pemasukan">Pemasukan</label>
+                                    <input type="radio" name="tipe" value="expense" id="pengeluaran"> <label
+                                        for="pengeluaran">Pengeluaran</label>
+                                </div>
+                            </div>
+                            <div class="form-outline">
+                                <label for="" class="form-label">Tanggal</label>
+                                <input type="date" class="form-control tanggal" id="">
+                            </div>
+                            <div class="form-outline">
+                                <label for="" class="form-label">Keterangan</label>
+                                <textarea class="keterangan form-control">-</textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3 px-3">
+        <table class="table table-striped">
+            <tr class="table-primary">
+                <th>Id</th>
+                <th>Deskripsi</th>
+                <th>Nominal</th>
+                <th>Tanggal</th>
+                <th></th>
+            </tr>
+            <tbody class="table-data">
+
+            </tbody>
+        </table>
+        <div id="kumpulan-modal"></div>
+        <div id="loading" class="text-center d-flex justify-content-center align-items-center">
+            <div class="spinner-border me-2" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p>Loading...</p>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

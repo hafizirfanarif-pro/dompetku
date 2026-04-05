@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dompetku</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container">
+      <a class="navbar-brand text-white" href="#">Dompetku</a>
+    </div>
+  </nav>
+  <div class="container-fluid my-5" id="dashboard">
+    <div class="row gap-4 justify-content-center">
+      <div class="col-md-2 col-10 rounded-3 bg-primary d-flex gap-2 align-items-center px-3 py-4">
+        <i class="bi bi-wallet2 fs-2 text-light"></i>
+        <div class="text-light">
+          <h4>Saldo</h4>
+          <p id="text-saldo">Rp. </p>
+        </div>
+      </div>
+      <div class="col-md-2 col-10 rounded-3 bg-success d-flex gap-2 align-items-center px-3 py-4">
+        <i class="bi bi-arrow-down-circle-fill fs-2 text-light"></i>
+        <div class="text-light">
+          <h4>Pemasukan</h4>
+          <p id="text-income">Rp. </p>
+        </div>
+      </div>
+      <div class="col-md-2 col-10 rounded-3 bg-danger d-flex gap-2 align-items-center px-3 py-4">
+        <i class="bi bi-arrow-up-circle-fill fs-2 text-light"></i>
+        <div class="text-light">
+          <h4>Pengeluaran</h4>
+          <p id="text-expense">Rp. </p>
+        </div>
+      </div>
+      <a href="detail.html"
+        class="col-md-2 col-10 rounded-3 bg-warning d-flex gap-2 align-items-center px-3 py-4 text-decoration-none">
+        <i class="bi bi-info-circle fs-2 text-light"></i>
+        <div class="text-light">
+          <h4>Detail</h4>
+          <p id="text-expense">Lihat Detail</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="container" id="home">
+    <div class="row justify-content-md-start justify-content-center gap-3 px-5">
+      <div class="col-md-6">
+        <canvas id="myChart" class="ms-md-5"></canvas>
+      </div>
+      <div class="col-md-4">
+        <div class="input-group">
+          <span class="input-group-text bg-primary text-white"><i class="bi bi-calendar"></i></span>
+          <input type="text" placeholder="Pilih Tanggal..." class="form-control" id="kalender-home">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
